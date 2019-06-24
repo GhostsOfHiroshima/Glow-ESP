@@ -20,7 +20,7 @@ void cGlowEsp::Run( ) {
 	auto glowObject = processMemory.Read<DWORD>( clientDLL + Offsets::glowObjectManager );
 
 
-	for ( int i = 0; i < 64; i++ ) {
+	for ( int i = 0; i <= 64; i++ ) {
 		auto Entity = processMemory.Read<int>( clientDLL + Offsets::entityList + i * 0x10 );
 		auto Dormant = processMemory.Read<bool>( Entity + Offsets::Dormant );
 		auto glowIndex = processMemory.Read<int>( Entity + Offsets::glowIndex );
